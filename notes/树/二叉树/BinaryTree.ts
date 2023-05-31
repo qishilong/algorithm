@@ -16,8 +16,14 @@ class TreeNode {
 
 class BinaryTree {
 
-    // 前序遍历
-    preorderTraversal(treeNode: TreeNode): unknown[] | null {
+    /**
+     * 深度优先遍历
+     * 1. 前序遍历
+     * 2. 中序遍历
+     * 3. 后序遍历
+     */
+    // 前序遍历 递归实现
+    preorderTraversal(treeNode: TreeNode | null): unknown[] | null {
         if (treeNode === null) {
             return null;
         };
@@ -28,8 +34,32 @@ class BinaryTree {
         return result;
     }
 
-    // 中序遍历
-    inorderTraversal(treeNode: TreeNode): unknown[] | null {
+    // 前序遍历 栈实现
+    preorderTraversalWithStack(treeNode: TreeNode | null): unknown[] | null {
+        if (treeNode === null) {
+            return null;
+        }
+        const resultNode: TreeNode[] = [], result: unknown[] = [];
+        let currentNode = treeNode;
+        while (currentNode !== null || resultNode.length !== 0) {
+            // 迭代访问节点的左孩子，并入栈
+            while (currentNode !== null) {
+                result.push(currentNode.value);
+                resultNode.push(currentNode);
+                currentNode = currentNode.left!;
+            }
+
+            // 如果节点没有左孩子，则弹出栈顶元素，访问节点右孩子
+            if (resultNode.length !== 0) {
+                currentNode = resultNode.pop()!;
+                currentNode = currentNode.right!;
+            }
+        }
+        return result;
+    }
+
+    // 中序遍历 递归实现
+    inorderTraversal(treeNode: TreeNode | null): unknown[] | null {
         if (treeNode === null) {
             return null;
         };
@@ -40,8 +70,30 @@ class BinaryTree {
         return result;
     }
 
-    // 后序遍历
-    postorderTraversal(treeNode: TreeNode): unknown[] | null {
+    // 中序遍历 栈实现
+    inorderTraversalWithStack(treeNode: TreeNode | null): unknown[] | null {
+        if (treeNode === null) {
+            return null;
+        }
+        const result: unknown[] = [], resultNode: TreeNode[] = [];
+        let treeNodeRoot: TreeNode | null = treeNode as TreeNode;
+        while (treeNodeRoot !== null || resultNode.length !== 0) {
+            // 左节点都先压入栈
+            while (treeNodeRoot !== null) {
+                resultNode.push(treeNodeRoot);
+                treeNodeRoot = treeNode.left;
+            }
+            const currentNode = resultNode.pop();
+            result.push(currentNode?.value);
+            if (currentNode?.right !== null) {
+                treeNodeRoot = currentNode?.right as TreeNode;
+            }
+        };
+        return result;
+    }
+
+    // 后序遍历 递归实现
+    postorderTraversal(treeNode: TreeNode | null): unknown[] | null {
         if (treeNode === null) {
             return null;
         };
@@ -51,6 +103,46 @@ class BinaryTree {
         result.push(treeNode.value);
         return result;
     };
+
+    // 后序遍历 栈实现
+    postorderTraversalWithStack(treeNode: TreeNode | null): unknown[] | null {
+        if (treeNode === null) {
+            return null;
+        }
+        const result: unknown[] = [], resultNode: TreeNode[] = [treeNode];
+        while (resultNode.length !== 0) {
+            // 头部插入
+            const currentNode = resultNode.pop();
+            result.unshift(currentNode?.value);
+            currentNode?.left && resultNode.push(currentNode.left);
+            currentNode?.right && resultNode.push(currentNode.right);
+        }
+        return result;
+    }
+
+    /**
+     * 广度优先遍历
+     * 1. 层序遍历
+     */
+    // 层序遍历
+    sequenceTraversal(treeNode: TreeNode | null): unknown[] | null {
+        if (treeNode === null) {
+            return null;
+        }
+        const result: unknown[] = [],
+            resultNode: TreeNode[] = [treeNode];
+        while (resultNode.length !== 0) {
+            const currentNode: TreeNode = resultNode.shift() as TreeNode;
+            result.push(currentNode?.value);
+            if (currentNode.left !== null) {
+                resultNode.push(currentNode.left!);
+            }
+            if (currentNode.right !== null) {
+                resultNode.push(currentNode.right!);
+            }
+        }
+        return result;
+    }
 
     // 前序遍历和中序遍历的结果 返回二叉树
     frontAndCenterCreateBinaryTree(front: string[] | number[] | any[], center: string[] | number[] | any[]): TreeNode | null {
@@ -91,6 +183,9 @@ class BinaryTree {
 // const center = ["d", "b", "e", "a", "f", "c", "g"];
 // const after = ["d", "e", "b", "f", "g", "c", "a"];
 // const resultValue1 = binaryTree.centerAndAfterCreateBinaryTree(center, after);
+// console.log(resultValue1);
+// const resultArr = binaryTree.sequenceTraversal(resultValue1);
+// console.log(resultArr);
 // const front = ["a", "b", "d", "e", "c", "f", "g"];
 // const center1 = ["d", "b", "e", "a", "f", "c", "g"];
 // const resultValue2 = binaryTree.frontAndCenterCreateBinaryTree(front, center1);
