@@ -28,7 +28,6 @@ const getPosition = (arr: number[], startIndex: number, endIndex: number) => {
     let standard = arr[getRandom_bilateral(startIndex, endIndex)];
     let left = startIndex;
     let right = endIndex;
-    console.log(standard);
     while (left !== right) {
         // 控制右指针左移
         while (left < right && arr[right] > standard) {
