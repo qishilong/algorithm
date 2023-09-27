@@ -15,7 +15,6 @@
 // 	}
 // 	return arr;
 // };
-[].includes(searchElement);
 
 // 两端同时排序
 const doubleSelectSort = (arr) => {
