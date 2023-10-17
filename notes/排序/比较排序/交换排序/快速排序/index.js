@@ -38,3 +38,35 @@ const quickSort = (arr, left, right) => {
 };
 const result = quickSort(arr, 0, arr.length - 1);
 console.log(result);
+
+const quickSortFn = (arr, left, right) => {
+	if (left === right) {
+		return;
+	}
+	const index = getPartition(arr, left, right);
+	quickSortFn(arr, left, index);
+	quickSortFn(arr, index + 1, right);
+};
+const getPartition = (arr, left, right) => {
+	const index = Math.floor(Math.random(left, right) * (right - left) + 1) + left;
+	const pivot = arr[index];
+	while (left <= right) {
+		while (left < pivot) {
+			left++;
+		}
+		while (right > pivot) {
+			right--;
+		}
+		if (left <= right) {
+			const temp = arr[left];
+			arr[left] = arr[right];
+			arr[right] = temp;
+			left++;
+			right--;
+		}
+	}
+	return right;
+};
+
+const resultFn = quickSort(arr, 0, arr.length - 1);
+console.log(resultFn);
