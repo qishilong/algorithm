@@ -1,3 +1,5 @@
+const arr = [1, 2, 42, 12, 4, 321, 4, 2, 4, 32, 5, 3, 5, 3, 2, 1, 43, 2, 13, 5, 53, 3, 3];
+
 function mergeSort(array) {
 	function sort(array, begin, end) {
 		if (begin !== end) {
@@ -33,8 +35,39 @@ function mergeSort(array) {
 	return array;
 }
 
-const arr = [1, 2, 42, 12, 4, 321, 4, 2, 4, 32, 5, 3, 5, 3, 2, 1, 43, 2, 13, 5, 53, 3, 3];
-
 const result = mergeSort(arr);
-
 console.log(result);
+
+const mergeSortFn = (arr, left, right) => {
+	if (left >= right) {
+		return;
+	}
+	const mid = (left + right) >> 1;
+	mergeSortFn(arr, left, mid);
+	mergeSortFn(arr, mid + 1, right);
+	merge(arr, left, mid, right);
+	return arr;
+};
+
+const merge = (arr, left, mid, right) => {
+	const temp = new Array(right - left + 1); // 临时数组
+	let i = left,
+		j = mid + 1;
+
+	// 合并两个有序数组
+	for (let k = 0, length = temp.length; k < length; k++) {
+		if (j > right || (i <= mid && arr[i] <= arr[j])) {
+			temp[k] = arr[i++];
+		} else {
+			temp[k] = arr[j++];
+		}
+	}
+
+	// 拷回原数组
+	for (let n = 0, len = temp.length; n < len; n++) {
+		arr[left + n] = temp[n];
+	}
+};
+
+const resultFn = mergeSortFn(arr, 0, arr.length - 1);
+console.log(resultFn);
