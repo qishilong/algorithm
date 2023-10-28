@@ -1,0 +1,8 @@
+{
+  "name": "javascript-algorithm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/qishilong/algorithm.git",
+  "author": "qishilong <663253062@qq.com>",
+  "license": "MIT"
+}

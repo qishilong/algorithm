@@ -41,7 +41,7 @@ console.log(result);
 
 const quickSortFn = (arr, left, right) => {
 	if (left === right) {
-		return;
+		return arr;
 	}
 	const index = getPartition(arr, left, right);
 	quickSortFn(arr, left, index);

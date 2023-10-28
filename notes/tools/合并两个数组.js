@@ -1,4 +1,9 @@
-function mergeArray(arrA, arrB) {
+/**
+ * 合并两个数组
+ * @param {*} arrA
+ * @param {*} arrB
+ */
+const mergeArray = (arrA, arrB) => {
 	const lengthA = arrA.length - 1,
 		lengthB = arrB.length - 1,
 		resultArr = [];
@@ -19,7 +24,10 @@ function mergeArray(arrA, arrB) {
 		resultArr[indexMerge++] = arrB[indexB++];
 	}
 	return resultArr;
-}
+};
+module.exports = {
+	mergeArray,
+};
 
 const arrA = [1, 2, 34, 2, 1];
 const arrB = [1, 3, 2, 4, 45, 324, 2, 34, 2, 3];
