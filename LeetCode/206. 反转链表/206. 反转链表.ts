@@ -9,6 +9,8 @@
  *     }
  * }
  */
+import { ListNode } from '../../notes/链表/单链表链表的构造函数';
+
 /**
  * 双指针
  * @param head
