@@ -14,7 +14,6 @@ var minWindow = function (s, t) {
       need.set(t[i], 1);
     }
   }
-  console.log(need);
   let left = 0,
     right = 0,
     valid = 0;
