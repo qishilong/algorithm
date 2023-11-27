@@ -1,4 +1,4 @@
-const arr = [1, 2, 3, 43, 14, 53, 21, 4532, 52, 14, 53, 14, 53, 2, 52, 452];
+// const arr = [1, 2, 3, 43, 14, 53, 21, 4532, 52, 14, 53, 14, 53, 2, 52, 452];
 
 const swap = (arr, left, right) => {
   const temp = arr[left];
@@ -35,6 +35,10 @@ const quickSortFn = (arr) => {
   }
   quickSort(arr, 0, arr.length);
 };
-quickSortFn(arr);
+// quickSortFn(arr);
 
-console.log(arr);
+// console.log(arr);
+
+module.exports = {
+  quickSortFn
+};
