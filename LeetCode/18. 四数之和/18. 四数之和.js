@@ -49,7 +49,7 @@ var fourSum = function (nums, target) {
   }
   return result;
 };
-const nums = [2, 2, 2, 2, 2],
-  target = 8;
+const nums = [1, 0, -1, 0, -2, 2],
+  target = 0;
 const result = fourSum(nums, target);
 console.log(result);
