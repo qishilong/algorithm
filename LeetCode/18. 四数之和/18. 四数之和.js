@@ -28,10 +28,10 @@ var fourSum = function (nums, target) {
         const sum = nums[i] + nums[j] + nums[left] + nums[right];
         if (sum > target) {
           right--;
-          continue;
+          continue; // 直接跳出当前循环，进入下一次循环
         } else if (sum < target) {
           left++;
-          continue;
+          continue; // 直接跳出当前循环，进入下一次循环
         } else {
           result.push([nums[i], nums[j], nums[right], nums[left]]);
           // 对 nums[left] 和 nums[right] 进行去重
