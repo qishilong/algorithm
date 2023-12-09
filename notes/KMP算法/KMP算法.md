@@ -20,8 +20,6 @@ KMP的经典思想就是:**当出现字符串不匹配时，可以记录一部�
 -   前缀表（不减一）C++实现
 -   总结
 
-读完本篇可以顺便把leetcode上28.实现strStr()题目做了。
-
 ### [#](https://programmercarl.com/0028.实现strStr.html#什么是kmp)什么是KMP
 
 说到KMP，先说一下KMP这个名字是怎么来的，为什么叫做KMP呢。
