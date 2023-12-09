@@ -1,6 +1,7 @@
-const {ListNode} = require("./../../notes/链表/单链表链表的构造函数.js");
+const { ListNode } = require("./../../notes/链表/单链表链表的构造函数.js");
 
 /**
+ * 双指针
  * @param {ListNode} head
  * @param {number} n
  * @return {ListNode}
