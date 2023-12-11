@@ -4,7 +4,7 @@
  * @param {number} k
  * @return {number[]}
  */
-// const maxSlidingWindow = function (nums, k) {
+// var maxSlidingWindow = function (nums, k) {
 //   class MonotonousQueue {
 //     constructor() {
 //       this.queue = [];
@@ -52,10 +52,10 @@
  * @param {number} k
  * @return {number[]}
  */
-const maxSlidingWindow = function (nums: number[], k: number) {
-  const result: number[] = [];
+var maxSlidingWindow = function (nums, k) {
+  const result = [];
   // 存下标，代表单调时间
-  const queue: number[] = [];
+  const queue = [];
   for (let i = 0, len = nums.length; i < len; i++) {
     // 保证对头合法性
     while (queue.length && queue[0] <= i - k) {
@@ -76,7 +76,7 @@ const maxSlidingWindow = function (nums: number[], k: number) {
   }
   return result;
 };
-const nums: number[] = [1, 3, -1, -3, 5, 3, 6, 7],
-  k: number = 3;
+const nums = [1, 3, -1, -3, 5, 3, 6, 7],
+  k = 3;
 const result = maxSlidingWindow(nums, k);
 console.log(result);
