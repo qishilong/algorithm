@@ -11,25 +11,45 @@ const root = new TreeNode(1, new TreeNode(2), new TreeNode(3));
  * }
  */
 /**
+ * 1. 递归法
  * @param {TreeNode} root
  * @return {number[]}
+ */
+// var preorderTraversal = function (root, result = []) {
+//   if (!root) {
+//     return result;
+//   }
+
+//   const dfs = (root) => {
+//     if (!root) {
+//       return result;
+//     }
+//     result.push(root.val);
+//     dfs(root.left);
+//     dfs(root.right);
+//   };
+
+//   dfs(root);
+
+//   return result;
+// };
+
+/**
+ * 2. 迭代法
+ * @param {*} root
+ * @param {*} result
  */
 var preorderTraversal = function (root, result = []) {
   if (!root) {
     return result;
   }
-
-  const dfs = (root) => {
-    if (!root) {
-      return result;
-    }
-    result.push(root.val);
-    dfs(root.left);
-    dfs(root.right);
-  };
-
-  dfs(root);
-
+  const stack = [root];
+  while (stack.length) {
+    const cur = stack.pop();
+    result.push(cur.val);
+    cur.right && stack.push(cur.right);
+    cur.left && stack.push(cur.left);
+  }
   return result;
 };
 

@@ -11,27 +11,48 @@ const root = new TreeNode(1, new TreeNode(2), new TreeNode(3));
  * }
  */
 /**
+ * 1. 递归法
  * @param {TreeNode} root
  * @return {number[]}
  */
-var preorderTraversal = function (root, result = []) {
+// var postorderTraversal = function (root, result = []) {
+//   if (!root) {
+//     return result;
+//   }
+
+//   const dfs = (root) => {
+//     if (!root) {
+//       return result;
+//     }
+//     dfs(root.left);
+//     dfs(root.right);
+//     result.push(root.val);
+//   };
+
+//   dfs(root);
+
+//   return result;
+// };
+
+/**
+ * 2. 迭代法
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+var postorderTraversal = function (root, result = []) {
   if (!root) {
     return result;
   }
-
-  const dfs = (root) => {
-    if (!root) {
-      return result;
-    }
-    dfs(root.left);
-    dfs(root.right);
-    result.push(root.val);
-  };
-
-  dfs(root);
-
-  return result;
+  const stack = [root];
+  while (stack.length) {
+    const cur = stack.pop();
+    result.push(cur.val);
+    // 因为最后需要翻转数组一次，所以先 push left 节点
+    cur.left && stack.push(cur.left);
+    cur.right && stack.push(cur.right);
+  }
+  return result.reverse();
 };
 
-const result = preorderTraversal(root);
+const result = postorderTraversal(root);
 console.log(result);
