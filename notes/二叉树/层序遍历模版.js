@@ -46,7 +46,7 @@ const levelOrderGetVal = (root) => {
 
 /**
  * 对每个节点进行操作
- * 比如将每一层的上一个节点指向下一个节点
+ * 比如填充每个节点的下一个右侧节点指针
  * @param {*} root
  */
 const levelOrderHandleNode = (root) => {
