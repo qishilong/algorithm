@@ -1,4 +1,4 @@
-const { swap } = require("./../../notes/tools/交换.js");
+const { swapArr } = require("./../../notes/tools/交换.js");
 
 /**
  * @param {character[]} s
@@ -6,7 +6,7 @@ const { swap } = require("./../../notes/tools/交换.js");
  */
 var reverseString = function (s) {
   for (let i = 0, j = s.length - 1; i < j; i++, j--) {
-    swap(s, i, j);
+    swapArr(s, i, j);
   }
   return s;
 };

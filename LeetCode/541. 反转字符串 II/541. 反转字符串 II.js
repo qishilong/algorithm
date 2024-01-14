@@ -1,4 +1,4 @@
-const { swap } = require("./../../notes/tools/交换.js");
+const { swapArr } = require("./../../notes/tools/交换.js");
 
 /**
  * @param {string} s
@@ -13,7 +13,7 @@ var reverseStr = function (s, k) {
     let left = i - 1,
       right = i + k > len ? len : i + k;
     while (++left < --right) {
-      swap(strArr, left, right);
+      swapArr(strArr, left, right);
     }
   }
   return strArr.join("");
