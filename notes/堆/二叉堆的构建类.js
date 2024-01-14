@@ -1,4 +1,4 @@
-const { swap } = require("./../tools/交换");
+const { swapArr } = require("./../tools/交换");
 
 /**
  * 二叉堆的构建类
@@ -21,7 +21,7 @@ class Heap {
     // 注意 compare 参数的顺序
     while (parent >= 0 && this.compare(parent, index) > 0) {
       // 交换当前节点和父节点的位置
-      swap(this.queue, index, parent);
+      swapArr(this.queue, index, parent);
 
       index = parent;
       parent = Math.floor((index - 1) / 2);
@@ -42,7 +42,7 @@ class Heap {
 
     // 注意 compare 参数顺序
     while (searchChild !== undefined && this.compare(index, searchChild) > 0) {
-      swap(this.queue, index, searchChild);
+      swapArr(this.queue, index, searchChild);
 
       // 更新下标
       index = searchChild;

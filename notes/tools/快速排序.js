@@ -1,6 +1,6 @@
 // const arr = [1, 4, 1, 3, 1512, 451234, 15, 1, 412, 312, 51, 251, 341];
 
-const swap = (arr, left, right) => {
+const swapArr = (arr, left, right) => {
   const temp = arr[left];
   arr[left] = arr[right];
   arr[right] = temp;
@@ -20,11 +20,11 @@ const quicksort = (arr, begin, end) => {
       right--;
     } while (left < right && arr[right] > arr[begin]);
     if (left < right) {
-      swap(arr, left, right);
+      swapArr(arr, left, right);
     }
   } while (left < right);
   const pointIndex = left === right ? right - 1 : right;
-  swap(arr, begin, pointIndex);
+  swapArr(arr, begin, pointIndex);
   quicksort(arr, begin, pointIndex);
   quicksort(arr, pointIndex + 1, end);
 };
@@ -40,5 +40,5 @@ const quickSortFn = (arr) => {
 // console.log(arr);
 
 module.exports = {
-  quickSortFn
+  quickSortFn,
 };

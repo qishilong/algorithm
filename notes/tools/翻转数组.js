@@ -1,4 +1,4 @@
-const { swap } = require("./交换.js");
+const { swapArr } = require("./交换.js");
 
 /**
  * 翻转数组
@@ -8,12 +8,12 @@ const { swap } = require("./交换.js");
  */
 const reverse = (arr, start, end) => {
   while (start < end) {
-    swap(arr, start, end);
+    swapArr(arr, start, end);
     start++;
     end--;
   }
 };
 
 module.exports = {
-  reverse
+  reverse,
 };
