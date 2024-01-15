@@ -1,0 +1,95 @@
+/**
+ * 1. 递归
+ * 对称比较
+ * 类似于后序遍历（左右中），但也不全是后序遍历
+ * 此题：
+ * 左子树：左右中，右子树：右左中
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+// var isSymmetric = function (root) {
+//   if (!root) {
+//     return true;
+//   }
+
+//   const compare = (left, right) => {
+//     // 首先排除空节点的情况
+//     if (left === null && right !== null) {
+//       return false;
+//     } else if (left !== null && right === null) {
+//       return false;
+//     } else if (left === null && right === null) {
+//       return true;
+//       // 排除了空节点后，再排除数值不相等的问题
+//     } else if (left.val !== right.val) {
+//       return false;
+//     }
+//     // 剩下的就是左右节点都不为空，而且数值相等的情况
+
+//     // 开始递归，做下一层判断
+//     const outSide = compare(left.left, right.right); // 左子树：左、右子树：右
+//     const inSide = compare(left.right, right.left); // 左子树：右、右子树：左
+//     return outSide && inSide; // 左子树：中、右子树：中
+//   };
+//   return compare(root.left, root.right);
+// };
+
+/**
+ * 2. 迭代（使用队列）
+ * 对称比较
+ * @param {*} root
+ */
+// var isSymmetric = function (root) {
+//   if (!root) {
+//     return true;
+//   }
+//   const queue = [];
+//   queue.push(root.left); // 将左子树头节点加入队列
+//   queue.push(root.right); // 将右子树头节点加入队列
+
+//   while (queue.length) {
+//     const leftNode = queue.shift(); // 左节点
+//     const rightNode = queue.shift(); // 右节点
+//     if (!leftNode && !rightNode) {
+//       continue;
+//     }
+//     if (!leftNode || !rightNode || leftNode.val !== rightNode.val) {
+//       return false;
+//     }
+//     queue.push(leftNode.left); // 将左节点的左节点加入队列
+//     queue.push(rightNode.right); // 将右节点的右节点加入队列
+//     queue.push(leftNode.right); // 将左节点的右节点加入队列
+//     queue.push(rightNode.left); // 将右节点的左节点加入队列
+//   }
+//   return true;
+// };
+
+/**
+ * 3. 迭代（使用栈）
+ * 对称比较
+ * @param {*} root
+ */
+var isSymmetric = function (root) {
+  if (!root) {
+    return true;
+  }
+  const stack = [];
+  stack.push(root.left); // 将左子树头节点加入队列
+  stack.push(root.right); // 将右子树头节点加入队列
+
+  while (stack.length) {
+    const rightNode = stack.pop(); // 右节点
+    const leftNode = stack.pop(); // 左节点
+    if (!leftNode && !rightNode) {
+      continue;
+    }
+    if (!leftNode || !rightNode || leftNode.val !== rightNode.val) {
+      return false;
+    }
+    stack.push(leftNode.left); // 将左节点的左节点加入队列
+    stack.push(rightNode.right); // 将右节点的右节点加入队列
+    stack.push(leftNode.right); // 将左节点的右节点加入队列
+    stack.push(rightNode.left); // 将右节点的左节点加入队列
+  }
+  return true;
+};
