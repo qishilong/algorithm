@@ -41,23 +41,80 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
+// var isBalanced = function (root) {
+//   if (!root) {
+//     return true;
+//   }
+//   const getDepth = (node) => {
+//     if (!node) {
+//       return 0;
+//     }
+//     const leftDepth = getDepth(node.left);
+//     const rightDepth = getDepth(node.right);
+//     return Math.max(leftDepth, rightDepth) + 1;
+//   };
+//   const leftDepth = getDepth(root.left);
+//   const rightDepth = getDepth(root.right);
+//   if (Math.abs(leftDepth - rightDepth) > 1) {
+//     return false;
+//   } else {
+//     return isBalanced(root.left) && isBalanced(root.right);
+//   }
+// };
+
+/**
+ * 3. 迭代
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
 var isBalanced = function (root) {
   if (!root) {
     return true;
   }
-  const getDepth = (node) => {
-    if (!node) {
-      return 0;
+  const getHeight = (node) => {
+    const stack = [];
+    if (node) {
+      stack.push(node); // 压入当前元素
     }
-    const leftDepth = getDepth(node.left);
-    const rightDepth = getDepth(node.right);
-    return Math.max(leftDepth, rightDepth) + 1;
+    let depth = 0,
+      height = 0;
+    while (stack.length) {
+      let curNode = stack[stack.length - 1]; // 取出栈顶
+      if (curNode) {
+        stack.pop();
+        stack.push(curNode); // 中
+        stack.push(null);
+        depth++;
+        // 右
+        if (curNode.right) {
+          stack.push(curNode.right);
+        }
+        // 左
+        if (curNode.left) {
+          stack.push(curNode.left);
+        }
+      } else {
+        stack.pop();
+        curNode = stack[stack.length - 1];
+        stack.pop();
+        depth--;
+      }
+      height = height > depth ? height : depth;
+    }
+    return height;
   };
-  const leftDepth = getDepth(root.left);
-  const rightDepth = getDepth(root.right);
-  if (Math.abs(leftDepth - rightDepth) > 1) {
-    return false;
-  } else {
-    return isBalanced(root.left) && isBalanced(root.right);
+  const stack = [root];
+  while (stack.length) {
+    const node = stack.pop(); // 栈顶元素
+    if (Math.abs(getHeight(node.left) - getHeight(node.right)) > 1) {
+      return false;
+    }
+    if (node.right) {
+      stack.push(node.right);
+    }
+    if (node.left) {
+      stack.push(node.left);
+    }
   }
+  return true;
 };
