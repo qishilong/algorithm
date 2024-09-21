@@ -6,34 +6,40 @@ const swapArr = (arr, left, right) => {
   arr[right] = temp;
 };
 
-const quicksort = (arr, begin, end) => {
-  if (begin >= end - 1) {
+const quicksort = (arr, start, end, isFirstOrder) => {
+  if (start >= end - 1) {
     return arr;
   }
-  let left = begin,
+  let left = start,
     right = end;
   do {
     do {
       left++;
-    } while (left < right && arr[left] < arr[begin]);
+    } while (left < right && (isFirstOrder ? arr[left] < arr[start] : arr[left] > arr[start]));
     do {
       right--;
-    } while (left < right && arr[right] > arr[begin]);
+    } while (left < right && (isFirstOrder ? arr[right] > arr[start] : arr[right] < arr[start]));
     if (left < right) {
       swapArr(arr, left, right);
     }
   } while (left < right);
   const pointIndex = left === right ? right - 1 : right;
-  swapArr(arr, begin, pointIndex);
-  quicksort(arr, begin, pointIndex);
-  quicksort(arr, pointIndex + 1, end);
+  swapArr(arr, start, pointIndex);
+  quicksort(arr, start, pointIndex, isFirstOrder);
+  quicksort(arr, pointIndex + 1, end, isFirstOrder);
 };
 
-const quickSortFn = (arr) => {
+/**
+ * 快速排序
+ * @param {number[]} arr 传入的数组
+ * @param {boolean} isFirstOrder 是正序排序还是倒序排序，默认是 true
+ * @returns {number[]}
+ */
+const quickSortFn = (arr, isFirstOrder = true) => {
   if (!arr || arr.length < 2) {
     return arr;
   }
-  quicksort(arr, 0, arr.length);
+  quicksort(arr, 0, arr.length, isFirstOrder);
 };
 // quickSortFn(arr);
 
