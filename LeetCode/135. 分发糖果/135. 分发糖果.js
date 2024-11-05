@@ -9,34 +9,34 @@
  */
 var candy = function (ratings) {
   if (!ratings.length) {
-    return ratings
+    return ratings;
   }
   if (ratings.length === 1) {
-    return 1
+    return 1;
   }
 
-  const length = ratings.length
-  const candies = new Array(length).fill(1)
+  const length = ratings.length;
+  const candies = new Array(length).fill(1);
 
   // 从前向后
   for (let i = 1; i < length; i++) {
     if (ratings[i] > ratings[i - 1]) {
-      candies[i] = candies[i - 1] + 1
+      candies[i] = candies[i - 1] + 1;
     }
   }
 
   // 从后向前
   for (let i = length - 2; i >= 0; i--) {
     if (ratings[i] > ratings[i + 1]) {
-      candies[i] = Math.max(candies[i], candies[i + 1] + 1)
+      candies[i] = Math.max(candies[i], candies[i + 1] + 1);
     }
   }
 
   // 统计结果
-  let result = 0
+  let result = 0;
   for (let i = 0; i < length; i++) {
-    result += candies[i]
+    result += candies[i];
   }
 
-  return result
-}
+  return result;
+};
