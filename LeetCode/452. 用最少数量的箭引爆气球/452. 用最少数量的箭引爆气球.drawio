@@ -1,0 +1,88 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
+  <diagram name="第 1 页" id="koRGf1SjUgFNw2wd3tNt">
+    <mxGraphModel dx="763" dy="582" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="wujexRSqnwPNc4iuARFo-5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#FFE6CC;" vertex="1" parent="1">
+          <mxGeometry x="210" y="180" width="60" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-6" value="气球1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="265" y="170" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-7" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#FFE6CC;" vertex="1" parent="1">
+          <mxGeometry x="310" y="180" width="60" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-8" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="180" y="160" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-9" value="6" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="370" y="160" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-10" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#FFE6CC;" vertex="1" parent="1">
+          <mxGeometry x="320" y="230" width="60" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-11" value="气球2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="375" y="220" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-12" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#FFE6CC;" vertex="1" parent="1">
+          <mxGeometry x="420" y="230" width="60" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-13" value="2" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="290" y="210" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-14" value="8" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="480" y="210" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-15" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#FFE6CC;" vertex="1" parent="1">
+          <mxGeometry x="450" y="280" width="60" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-16" value="气球3" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="505" y="270" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-17" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#FFE6CC;" vertex="1" parent="1">
+          <mxGeometry x="550" y="280" width="60" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-18" value="7" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="420" y="260" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-19" value="12" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="605" y="260" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-20" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#FFE6CC;" vertex="1" parent="1">
+          <mxGeometry x="580" y="330" width="60" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-21" value="气球4" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="635" y="320" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-22" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#FFE6CC;" vertex="1" parent="1">
+          <mxGeometry x="680" y="330" width="60" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-23" value="10" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="545" y="310" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-24" value="16" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="735" y="310" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-25" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#FF0000;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="360" as="sourcePoint" />
+            <mxPoint x="370" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-26" value="" style="endArrow=none;html=1;rounded=0;strokeColor=#FF0000;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="609.6" y="440" as="sourcePoint" />
+            <mxPoint x="609.6" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-27" value="重叠气球最小有边界" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#FF0000;" vertex="1" parent="1">
+          <mxGeometry x="310" y="360" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wujexRSqnwPNc4iuARFo-28" value="下一组重叠气球最小右边界" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#FF0000;" vertex="1" parent="1">
+          <mxGeometry x="525" y="440" width="170" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
