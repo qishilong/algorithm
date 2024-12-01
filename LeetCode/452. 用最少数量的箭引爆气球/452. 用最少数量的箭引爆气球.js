@@ -21,7 +21,7 @@ var findMinArrowShots = function (points) {
   // points 不为空至少需要一支箭
   let result = 1
   for (let i = 1, length = points.length; i < length; i++) {
-    //  气球 i 和气球 i - 1 不挨着，主要以这里不是 >=
+    //  气球 i 和气球 i - 1 不挨着，注意这里不是 >=
     if (points[i][0] > points[i - 1][1]) {
       result++ // 需要一支箭
     } else {
