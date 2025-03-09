@@ -62,7 +62,7 @@ var combinationSum = function (candidates, target) {
     }
   };
 
-  candidates = candidates.sort((a, b) => a - b); // candidates 需要向经过一次排序
+  candidates = candidates.sort((a, b) => a - b); // candidates 需要先经过一次排序
 
   backtracking(candidates, target, 0, 0);
 
