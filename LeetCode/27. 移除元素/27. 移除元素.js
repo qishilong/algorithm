@@ -27,20 +27,20 @@
 var removeElement = function (nums, val) {
   let fast = 0,
     slow = 0,
-    len = nums.length;
+    len = nums.length
 
   while (fast < len) {
     if (nums[fast] !== val) {
-      nums[slow] = nums[fast];
-      slow++;
+      nums[slow] = nums[fast]
+      slow++
     }
-    fast++;
+    fast++
   }
-  return slow;
-};
+  return slow
+}
 
 const nums = [3, 2, 2, 3],
-  val = 3;
+  val = 3
 
-const result = removeElement(nums, val);
-console.log(result);
+const result = removeElement(nums, val)
+console.log(result)
