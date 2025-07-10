@@ -9,7 +9,7 @@
 //     !matrix ||
 //     !Array.isArray(matrix) ||
 //     matrix.length === 0 ||
-//     matrix.some(item => !item || !Array.isArray(item) || item.length === 0)
+//     matrix.some(item => !item || !Array.isArray(item))
 //   ) {
 //     return;
 //   }
@@ -39,7 +39,7 @@
 //     !matrix ||
 //     !Array.isArray(matrix) ||
 //     matrix.length === 0 ||
-//     matrix.some(item => !item || !Array.isArray(item) || item.length === 0)
+//     matrix.some(item => !item || !Array.isArray(item))
 //   ) {
 //     return;
 //   }
@@ -84,7 +84,7 @@ var searchMatrix = function (matrix, target) {
     !matrix ||
     !Array.isArray(matrix) ||
     matrix.length === 0 ||
-    matrix.some(item => !item || !Array.isArray(item) || item.length === 0)
+    matrix.some(item => !item || !Array.isArray(item))
   ) {
     return;
   }
