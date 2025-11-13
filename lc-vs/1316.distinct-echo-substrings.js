@@ -31,8 +31,8 @@
 //     for (let j = i + 1; j < length; j++) {
 //       const l = j - i;
 //       if (j * 2 - i <= length) {
-//         const left = text.substr(i, l);
-//         const right = text.substr(j, l);
+//         const left = text.slice(i, i + l);
+//         const right = text.slice(j, j + l);
 //         if (left === right && !set.has(left)) {
 //           ans++;
 //           set.add(left);
