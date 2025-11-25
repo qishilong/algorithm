@@ -81,7 +81,7 @@ var calculate = function (s) {
     i++;
   }
 
-  return Number(stack.join(""));
+  return Number(stack[0]);
 };
 
 const s = "12-3*4";
