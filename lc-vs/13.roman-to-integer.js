@@ -56,23 +56,106 @@
  * @param {string} s
  * @return {number}
  */
+// var romanToInt = function (s) {
+//   if (!s || typeof s !== "string" || !s.trim()) {
+//     return;
+//   }
+
+//   const map = new Map();
+//   map.set("M", 1000);
+//   map.set("D", 500);
+//   map.set("C", 100);
+//   map.set("L", 50);
+//   map.set("X", 10);
+//   map.set("V", 5);
+//   map.set("I", 1);
+
+//   let res = 0;
+
+//   const length = s.length;
+
+//   for (let i = 0; i < length; i++) {
+//     const val = map.get(s[i]);
+//     if (i + 1 < length && val < map.get(s[i + 1])) {
+//       res -= val;
+//     } else {
+//       res += val;
+//     }
+//   }
+
+//   return res;
+// };
+
+/**
+ * 1. 模拟
+ * @param {string} s
+ * @return {number}
+ */
+// var romanToInt = function (s) {
+//   if (!s || typeof s !== "string" || !s.trim()) {
+//     return;
+//   }
+
+//   const valueArr = [
+//     ["M", 1000],
+//     ["CM", 900],
+//     ["D", 500],
+//     ["CD", 400],
+//     ["C", 100],
+//     ["XC", 90],
+//     ["L", 50],
+//     ["XL", 40],
+//     ["X", 10],
+//     ["IX", 9],
+//     ["V", 5],
+//     ["IV", 4],
+//     ["I", 1],
+//   ];
+
+//   const map = new Map(valueArr);
+
+//   const length = s.length;
+
+//   let res = 0;
+
+//   for (let i = 0; i < length; ) {
+//     if (i + 1 < length && map.has(s[i] + s[i + 1])) {
+//       res += map.get(s[i] + s[i + 1]);
+//       i += 2;
+//     } else {
+//       res += map.get(s[i]);
+//       ++i;
+//     }
+//   }
+
+//   return res;
+// };
+
+/**
+ * 1. 模拟
+ * @param {string} s
+ * @return {number}
+ */
 var romanToInt = function (s) {
   if (!s || typeof s !== "string" || !s.trim()) {
     return;
   }
 
-  const map = new Map();
-  map.set("M", 1000);
-  map.set("D", 500);
-  map.set("C", 100);
-  map.set("L", 50);
-  map.set("X", 10);
-  map.set("V", 5);
-  map.set("I", 1);
+  const valueArr = [
+    ["M", 1000],
+    ["D", 500],
+    ["C", 100],
+    ["L", 50],
+    ["X", 10],
+    ["V", 5],
+    ["I", 1],
+  ];
 
-  let res = 0;
+  const map = new Map(valueArr);
 
   const length = s.length;
+
+  let res = 0;
 
   for (let i = 0; i < length; i++) {
     const val = map.get(s[i]);
@@ -85,6 +168,10 @@ var romanToInt = function (s) {
 
   return res;
 };
+
+// const s = "MCMXCIV";
+// const res = romanToInt(s);
+// console.log(res);
 // @lc code=end
 
 /*
