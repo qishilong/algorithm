@@ -13,6 +13,45 @@
  * @param {string[]} strs
  * @return {string}
  */
+// var longestCommonPrefix = function (strs) {
+//   if (
+//     !strs ||
+//     !Array.isArray(strs) ||
+//     strs.length === 0 ||
+//     strs.some((item) => typeof item !== "string")
+//   ) {
+//     return;
+//   }
+
+//   const minStrLength = Math.min(...strs.map((item) => item.length));
+
+//   if (minStrLength === 0) {
+//     return "";
+//   }
+
+//   let res = "",
+//     end = false;
+
+//   for (let i = 0; i < minStrLength; i++) {
+//     const char = strs[0][i];
+//     strs.forEach((item) => {
+//       if (item[i] !== char) {
+//         end = true;
+//       }
+//     });
+//     if (end) {
+//       return res;
+//     }
+//     res += char;
+//   }
+
+//   return res;
+// };
+
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
 var longestCommonPrefix = function (strs) {
   if (
     !strs ||
@@ -20,7 +59,7 @@ var longestCommonPrefix = function (strs) {
     strs.length === 0 ||
     strs.some((item) => typeof item !== "string")
   ) {
-    return;
+    return "";
   }
 
   const minStrLength = Math.min(...strs.map((item) => item.length));
@@ -29,24 +68,25 @@ var longestCommonPrefix = function (strs) {
     return "";
   }
 
-  let res = "",
-    end = false;
+  const firstStr = strs[0];
+
+  let res = "";
 
   for (let i = 0; i < minStrLength; i++) {
-    const char = strs[0][i];
-    strs.forEach((item) => {
-      if (item[i] !== char) {
-        end = true;
-      }
-    });
-    if (end) {
-      return res;
+    let char = firstStr[i];
+    if (strs.every((item) => item[i] === char)) {
+      res += char;
+    } else {
+      break;
     }
-    res += char;
   }
 
   return res;
 };
+
+// const strs = ["flower", "flow", "flight"];
+// const res = longestCommonPrefix(strs);
+// console.log(res);
 // @lc code=end
 
 /*
