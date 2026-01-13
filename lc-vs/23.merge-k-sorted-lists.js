@@ -64,55 +64,114 @@
  * @param {ListNode[]} lists
  * @return {ListNode}
  */
-var mergeKLists = function (lists) {
-  const length = lists.length;
+// var mergeKLists = function (lists) {
+//   const length = lists.length;
 
-  if (!lists || !Array.isArray(lists)) {
-    return;
+//   if (!lists || !Array.isArray(lists)) {
+//     return;
+//   }
+
+//   if (length === 1) {
+//     return lists[0];
+//   }
+
+//   /**
+//    * 合并两个顺序列表
+//    * @param {ListNode} a
+//    * @param {ListNode} b
+//    */
+//   const mergeTwoList = (a, b) => {
+//     if (a === null || b === null) {
+//       return a !== null ? a : b;
+//     }
+
+//     const head = new ListNode(0);
+//     let tail = head,
+//       listA = a,
+//       listB = b;
+
+//     while (listA !== null && listB !== null) {
+//       if (listA.val < listB.val) {
+//         tail.next = listA;
+//         listA = listA.next;
+//       } else {
+//         tail.next = listB;
+//         listB = listB.next;
+//       }
+//       tail = tail.next;
+//     }
+
+//     tail.next = listA !== null ? listA : listB;
+
+//     return head.next;
+//   };
+
+//   let res = null;
+
+//   for (let i = 0; i < length; i++) {
+//     res = mergeTwoList(res, lists[i]);
+//   }
+
+//   return res;
+// };
+
+/**
+ * 2. 顺序合并
+ * @param {ListNode[]} lists
+ * @return {ListNode}
+ */
+var mergeKLists = function (lists) {
+  if (!lists || !Array.isArray(lists) || lists.length === 0) {
+    return null;
   }
 
-  if (length === 1) {
+  if (lists.length === 1) {
     return lists[0];
   }
 
   /**
-   * 合并两个顺序列表
-   * @param {ListNode} a
-   * @param {ListNode} b
+   * 合并两个升序链表
+   * @param {ListNode} listA
+   * @param {ListNode} listB
    */
-  const mergeTwoList = (a, b) => {
-    if (a === null || b === null) {
-      return a !== null ? a : b;
-    }
-
+  const mergeTwoList = (listA, listB) => {
     const head = new ListNode(0);
-    let tail = head,
-      listA = a,
-      listB = b;
+    let tail = head;
 
-    while (listA !== null && listB !== null) {
-      if (listA.val < listB.val) {
+    while (listA || listB) {
+      if (!listA) {
+        tail.next = listB;
+        break;
+      }
+      if (!listB) {
+        tail.next = listA;
+        break;
+      }
+      if (listA.val > listB.val) {
+        tail.next = listB;
+        listB = listB.next;
+      } else if (listA.val < listB.val) {
         tail.next = listA;
         listA = listA.next;
       } else {
-        tail.next = listB;
-        listB = listB.next;
+        tail.next = listA;
+        listA = listA.next;
       }
+
       tail = tail.next;
     }
-
-    tail.next = listA !== null ? listA : listB;
 
     return head.next;
   };
 
-  let res = null;
+  const length = lists.length;
+  let prevMergeTwoListResult = null;
 
   for (let i = 0; i < length; i++) {
-    res = mergeTwoList(res, lists[i]);
+    prevMergeTwoListResult = mergeTwoList(prevMergeTwoListResult, lists[i]);
   }
 
-  return res;
+  return prevMergeTwoListResult;
 };
 // @lc code=end
 
