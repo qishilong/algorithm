@@ -1,6 +1,6 @@
 /**
  * 1. 利用辅助数组
- * 对于矩阵中的元素 matrix[row][col]，在旋转后，它的新位置为 matrix_new[col][n−row−1]。
+ * 对于矩阵中的元素 matrix[row][col]，在旋转后，它的新位置为 matrix[col][matrix.length−row−1]。
  * @param {number[][]} matrix
  * @return {void} Do not return anything, modify matrix in-place instead.
  */
