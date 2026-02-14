@@ -13,19 +13,33 @@
  * @param {string} s
  * @return {number}
  */
+// var lengthOfLastWord = function (s) {
+//   if (!s || typeof s !== "string" || !s.trim()) {
+//     return;
+//   }
+
+//   const arr = s.trim().split(" ");
+
+//   return arr[arr.length - 1].length;
+// };
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
 var lengthOfLastWord = function (s) {
-  if (!s || typeof s !== "string" || !s.trim()) {
+  if (!s || typeof s !== 'string' || !s.trim()) {
     return;
   }
 
-  const arr = s.trim().split(" ");
+  const arr = s.trim().split(' ');
 
   return arr[arr.length - 1].length;
 };
 
-const s = "Hello World";
-const res = lengthOfLastWord(s);
-console.log(res);
+// const s = "Hello World";
+// const res = lengthOfLastWord(s);
+// console.log(res);
 
 // @lc code=end
 
